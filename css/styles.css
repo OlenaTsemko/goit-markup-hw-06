@@ -687,6 +687,45 @@ img {
   fill: #ffffff;
 }
 
+.footer-form {
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.footer-form-input-mail {
+  margin-right: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+
+  width: 358px;
+  height: 50px;
+
+  color: inherit;
+  background-color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  background-color: #b0b3ba;
+  box-shadow: inset 0 200px 200px -100px var(--background-footer-color);
+  /* box-shadow: inset 0 0 0 50px var(--background-footer-color); */
+}
+
+.footer-form-input-mail:hover,
+.footer-form-input-mail:focus {
+  box-shadow: 0 0 25px 0 var(--accent-color),
+    inset 0 200px 200px -100px var(--background-footer-color);
+
+  /* inset 0 0 0 50px var(--background-footer-color); */
+}
+
+..footer-form-input-mail::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .footer .modal-btn {
   display: flex;
   align-items: center;
@@ -868,6 +907,35 @@ img {
 .portfolio-list-item:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+/* Модальное окно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 /* Raleway bold 700

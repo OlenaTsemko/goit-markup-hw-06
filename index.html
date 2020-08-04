@@ -96,7 +96,9 @@
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <button class="modal-btn" type="button">Заказать услугу</button>
+          <button class="modal-btn" type="button" data-modal-open>
+            Заказать услугу
+          </button>
         </div>
       </section>
 
@@ -643,14 +645,31 @@
 
         <div class="footer-form-container holder">
           <b class="text">подпишитесь на рассылку</b>
-          <button class="modal-btn" type="button">
-            <span class="subscribe">Подписаться</span>
-            <svg class="icon-send" width="24" height="24">
-              <use href="./images/sprite.svg#icon-send"></use>
-            </svg>
-          </button>
+          <form class="footer-form" action="">
+            <input
+              class="footer-form-input-mail"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+            />
+            <button class="modal-btn" type="submit">
+              <span class="subscribe">Подписаться</span>
+              <svg class="icon-send" width="24" height="24">
+                <use href="./images/sprite.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </footer>
+
+    <!-- Модальное окно -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button data-modal-close>Закрыть</button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
