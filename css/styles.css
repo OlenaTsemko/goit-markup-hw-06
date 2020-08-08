@@ -1119,7 +1119,8 @@ img {
 
   /* 2-ой способ вставить кастомный чекбокс вместо инлайн свг(спрайт) */
   /* background-image: url(../images/icon-check.svg);
-  background-size: contain; */
+  background-size: contain;
+  background-origin: border-box; */
 }
 
 .modal-form-policy-icon {
@@ -1162,6 +1163,12 @@ img {
 .form-btn:focus {
   transform: scale(1);
 }
+/* 2-ой способ скрыть инпуты для кастомных чекбоксов (вместо вижуали хидден) */
+/* .modal-form-policy-input {
+-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; 
+} */
 
 /* Raleway bold 700
 Roboto medium 500
@@ -1169,17 +1176,3 @@ Roboto black 900
 Roboto bold 700
 Roboto regular 400
 */
-
-/* +цвет основного текста #757575 */
-/* +цвет заголовка и навигации #212121 */
-/* +цвет текста белый #FFFFFF */
-/* цвет текста логотипа #000000 */
-/* +акцент #2196F3 */
-/* цвет ховера кнопок #188CE8 */
-/* +основной цвет фона #FFFFFF */
-/* +вторичный цвет фона #F5F4FA */
-/* +цвет фона в футере #2F303A */
-/* цвет ссылок в футере rgba(255, 255, 255, 0.6) */
-/* цвет фона в секции деятельность rgba(47, 48, 58, 0.8) */
-/* цвет иконок #AFB1B8 */
-/* background иконок в футере background: rgba(255, 255, 255, 0.1) */
