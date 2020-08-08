@@ -697,25 +697,30 @@ img {
   font-size: 16px;
   line-height: 1.25;
 
-  /* background-color: inherit; */
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 
-  /* color: inherit; */
   -webkit-text-fill-color: #ffffff;
-  background-color: #b0b3ba;
-  box-shadow: inset 0 200px 200px -100px var(--background-footer-color);
-  /* box-shadow: inset 0 0 0 50px var(--background-footer-color); */
+  box-shadow: inset 0 0 0 50px var(--background-footer-color);
+  outline: none;
+
+  /* color: inherit; */
+  /* background-color: inherit; */
+
+  /* градиент в инпуте */
+  /* background-color: #b0b3ba;
+  box-shadow: inset 0 200px 200px -100px var(--background-footer-color); */
 }
 
-.footer-form-input:hover,
+/* эксперементы с тенью =) */
+/* .footer-form-input:hover,
 .footer-form-input:focus {
   box-shadow: 0 0 25px 0 var(--accent-color),
     inset 0 200px 200px -100px var(--background-footer-color);
 
-  /* inset 0 0 0 50px var(--background-footer-color); */
-}
+  inset 0 0 0 50px var(--background-footer-color);
+} */
 
 .footer-form-input::placeholder {
   -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
@@ -909,12 +914,16 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 500ms var(--transition-timing-function),
+    visibility 500ms var(--transition-timing-function);
 }
 
-/* .backdrop.is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-} */
+}
 
 .modal-form {
   position: absolute;
@@ -936,6 +945,12 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transition: transform 500ms var(--transition-timing-function);
+}
+
+.backdrop.is-hidden .modal-form {
+  transform: translate(-50%, 50%);
 }
 
 .modal-form-text {
@@ -959,6 +974,7 @@ img {
   border-radius: 4px;
 
   transition: border 250ms var(--transition-timing-function);
+  cursor: pointer;
 
   /* чтоб при автозаполнении цвет бекграунда оставался белым */
   box-shadow: 0 0 0 1000px #ffffff inset;
@@ -1080,11 +1096,18 @@ img {
 
   border: 2px solid #212121;
   border-radius: 2px;
+
+  transition: background-color 250ms var(--transition-timing-function),
+    border 250ms var(--transition-timing-function);
 }
 
 .modal-form-policy-input:checked + .modal-form-policy-icon-span {
   background-color: var(--accent-color);
   border: 2px solid var(--accent-color);
+
+  /* 2-ой способ вставить кастомный чекбокс вместо инлайн свг(спрайт) */
+  /* background-image: url(../images/icon-check.svg);
+  background-size: contain; */
 }
 
 .modal-form-policy-icon {
@@ -1095,8 +1118,29 @@ img {
 
 .button-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  padding: 6px;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: var(--background-main-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-close:hover .modal-form-icon-close,
+.button-close:focus .modal-form-icon-close {
+  fill: var(--accent-color);
+}
+
+.modal-form-icon-close {
+  transition: fill 250ms var(--transition-timing-function);
 }
 
 .form-btn {
