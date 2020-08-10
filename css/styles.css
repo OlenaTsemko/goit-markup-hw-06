@@ -301,6 +301,8 @@ img {
   transform-origin: bottom center;
   transition: background-color 250ms var(--transition-timing-function),
     transform 250ms var(--transition-timing-function);
+
+  outline: none;
 }
 .modal-btn:hover,
 .modal-btn:focus {
@@ -729,7 +731,7 @@ img {
 }
 
 .footer-form-input:invalid:not(:placeholder-shown) {
-  border: 1px solid red;
+  border: 1px solid #ff0000;
 }
 
 .footer-form-input::placeholder {
@@ -799,7 +801,10 @@ img {
     color 250ms var(--transition-timing-function),
     background-color 250ms var(--transition-timing-function),
     box-shadow 250ms var(--transition-timing-function);
+
+  outline: none;
 }
+
 .portfolio-btn:hover,
 .portfolio-btn:focus {
   color: var(--secondary-text-color);
@@ -935,16 +940,12 @@ img {
   pointer-events: none;
 }
 
-.modal-form {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   text-align: center;
-
-  /* display: flex;
-  flex-direction: column; */
 
   padding: 40px;
 
@@ -959,7 +960,14 @@ img {
   transition: transform 500ms var(--transition-timing-function);
 }
 
-.backdrop.is-hidden .modal-form {
+.modal-form {
+  position: relative;
+
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.backdrop.is-hidden .modal {
   transform: translate(-50%, 50%);
 }
 
